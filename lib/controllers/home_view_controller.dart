@@ -1,16 +1,13 @@
 import 'dart:math';
+import 'package:flutter/material.dart';
 import 'package:topjoy/constants.dart' as constants;
-
-import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
 class HomeViewController extends GetxController {
   HomeViewController(this.context);
 
   BuildContext context;
-
   bool isInitialized = false;
-
   int bottlecapState = 0;
 
   String giveMeNewMessage() {
@@ -41,7 +38,6 @@ class HomeViewController extends GetxController {
       precacheImage(AssetImage('images/bottlecap_$i.png'), context);
     }
     isInitialized = true;
-
     update();
   }
 

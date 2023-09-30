@@ -9,14 +9,10 @@ class HomeViewController extends GetxController {
   BuildContext context;
   bool isInitialized = false;
   int bottlecapState = 0;
+  int random = 0;
 
-  String giveMeNewMessage() {
-    if (bottlecapState == 10) {
-      int random = Random().nextInt(constants.messages.length);
-      return constants.messages[random];
-    } else {
-      return "";
-    }
+  String giveMyMessage() {
+    return (bottlecapState == 10) ? constants.messages[random] : "";
   }
 
   void flipTheBottlecap() async {
@@ -28,6 +24,7 @@ class HomeViewController extends GetxController {
         (condition) ? i < 11 : i >= 0;
         (condition) ? i++ : i--) {
       bottlecapState = i;
+      if (condition) random = Random().nextInt(constants.messages.length);
       await Future.delayed(Duration(milliseconds: 15));
       update();
     }
@@ -37,6 +34,7 @@ class HomeViewController extends GetxController {
     for (int i = 0; i < 11; i++) {
       precacheImage(AssetImage('images/bottlecap_$i.png'), context);
     }
+    // betöltöttük az összes fontos képet
     isInitialized = true;
     update();
   }

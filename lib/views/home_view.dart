@@ -31,7 +31,7 @@ class HomeView extends StatelessWidget {
                         padding: EdgeInsets.all(55),
                         child: Center(
                           child: Text(
-                            controller.giveMeNewMessage(),
+                            controller.giveMyMessage(),
                             textAlign: TextAlign.center,
                             style: GoogleFonts.manrope(
                               fontWeight: FontWeight.w800,

@@ -14,8 +14,12 @@ class HomeViewController extends GetxController {
   int bottlecapState = 0;
 
   String giveMeNewMessage() {
-    int random = Random().nextInt(constants.messages.length);
-    return constants.messages[random];
+    if (bottlecapState == 10) {
+      int random = Random().nextInt(constants.messages.length);
+      return constants.messages[random];
+    } else {
+      return "";
+    }
   }
 
   void flipTheBottlecap() async {

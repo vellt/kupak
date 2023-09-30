@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -23,25 +22,23 @@ class HomeView extends StatelessWidget {
                     children: [
                       Image.asset(
                         'images/bottlecap_${controller.bottlecapState}.png',
-                        width: 250,
+                        width: 300,
                         fit: BoxFit.cover,
                       ),
                       Container(
-                        height: 250,
-                        width: 250,
-                        padding: EdgeInsets.all(40),
+                        height: 300,
+                        width: 300,
+                        padding: EdgeInsets.all(55),
                         child: Center(
-                          child: (controller.bottlecapState == 10)
-                              ? Text(
-                                  controller.giveMeNewMessage(),
-                                  textAlign: TextAlign.center,
-                                  style: GoogleFonts.acme(
-                                    fontWeight: FontWeight.w900,
-                                    fontSize: 20,
-                                    color: Color.fromARGB(255, 36, 58, 37),
-                                  ),
-                                )
-                              : null,
+                          child: Text(
+                            controller.giveMeNewMessage(),
+                            textAlign: TextAlign.center,
+                            style: GoogleFonts.manrope(
+                              fontWeight: FontWeight.w800,
+                              fontSize: 20,
+                              color: Color.fromARGB(255, 46, 71, 47),
+                            ),
+                          ),
                         ),
                       )
                     ],

@@ -30,18 +30,18 @@ class HomeViewController extends GetxController {
     }
   }
 
-  void preloadAllImages() {
+  Future<void> preloadAllImages() async {
     for (int i = 0; i < 11; i++) {
-      precacheImage(AssetImage('images/bottlecap_$i.png'), context);
+      await precacheImage(AssetImage('images/bottlecap_$i.png'), context);
     }
-    // betöltöttük az összes fontos képet
-    isInitialized = true;
-    update();
   }
 
   @override
   Future<void> onInit() async {
     super.onInit();
-    preloadAllImages();
+    await preloadAllImages();
+    // betöltöttük az összes fontos képet
+    isInitialized = true;
+    update();
   }
 }
